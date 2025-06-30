@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            height: 2500px;
+            background-color: rgb(194, 201, 209);
+        }
+        .container{
+            height: 700px;
+            width: 200px;
+            position: fixed;
+            z-index: -1;
+            margin-top: 0px;
+        }
+        .container img{
+            height: 900px;
+            width: 2000px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            background-color: white;
+        }
+        .con{
+            padding: 0px;
+            display: flex;
+            justify-content: right;
+            gap: 40px;
+            top: 0px;
+            position: fixed;
+            width: 2000px;
+            background: white;
+            height: 50px;
+        }
+        button{
+            background-color: black;
+            color: white;
+            height: 50px;
+            width: 200px;
+            border-radius: 50px;
+            font-size: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            animation-name: pluse;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @keyframes pluse {
+            from{
+                transform:scale(1);
+            }
+            to{
+                transform:scale(-1);
+            }
+        }
+        .first{
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+            background-color: white;
+            width: 2000px;
+            height: 80px;
+            margin-left: 0px;
+            margin-top: 10px;
+        }
+        .heading{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman';
+            font-size: 60px;
+            color: rgb(39, 122, 218);
+            background: #000;
+        }
+        .basehead{
+            text-align: center;
+            font-size: 30px;
+            font-family: Georgia, 'Times New Roman';
+            color: white;
+        }
+        .loading{
+            border:5px solid rgb(39, 122, 218);
+            background-color: black;
+            height: 30px;
+            width: 400px;
+            border-radius: 30px;
+            animation-name: load;
+            animation-duration: 5s;
+            animation-direction: reverse;
+            animation-iteration-count: infinite;
+            margin-left: 800px;
+        }
+        @keyframes load {
+            from{
+                width: 400px;
+            }
+            to{
+                width: 40px;
+            }
+        }
+ 
+        .whats-container img{
+        height: 80px;
+        width: 80px;
+        border-radius: 50px;
+        margin-top: 100px;
+        margin-left: 1880px;
+        position: fixed;
+        z-index: 1;
+        }
+        .whats-container img:hover{
+        cursor: grab;
+        }
+
+.ins-container img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin-top: 100px;
+    margin-left: 1880px;
+    position: fixed;
+    z-index: 1;
+}
+        #about{
+            margin-top: 280px;
+            font-size: 40px;
+            background: transparent;
+            color: white;
+            margin-left: 10px;
+        }
+        .second{
+            background-color: white;
+            color: black;
+        }
+        #box1{
+            font-size: 30px;
+            display: grid;
+            grid-template-columns: repeat(2,2fr);
+            font-style: italic;
+            color: white;
+            margin-left: 10px;
+            margin-left: 80px;
+        }
+        #service{
+            font-size: 40px;
+            color: white;
+            margin-left: 10px;
+        }
+        .third{
+            background-color: white;
+            font-size: 40px;
+            color: black;
+        }
+        .rating{
+            font-size: 40px;
+            background-color: white;
+            width: 150px;
+            color: black;
+        }
+        .star{
+            height: 50px;
+            border: 5px solid black;
+        }
+.img-container{
+    height: 250px;
+    width: 1200px;
+    padding: 20px;
+    background: transparent;
+}
+.img-box{
+    height:150px;
+    width: 900px;
+    padding: 50px;
+    margin-left: 100px;
+    background-image: url('book2.jpg'),url(book3.jpg);
+    background-repeat: no-repeat,no-repeat;
+    background-position: right,left;
+}
+        #box2{
+            font-size: 30px;
+            font-style: italic;
+            margin-left: 150px;
+            color: white;
+        }
+        
+        span{
+            font-size: 30px;
+            font-style: italic;
+            margin-left: 700px;
+            color: white;
+        }
+.con-head{
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+}
+#contact{
+    font-size: 40px;
+    color: white;
+    margin-left: 10px;
+}
+
+</style>
+</head>
+<body>
+    <div>
+    <div class="container">
+    <img src="pexelimg.jpg" alt="">
+    </div>
+    <div class="con">
+        <div class="item1"><a href="#home">Home</a></div>
+        <div class="item1"><a href="#service">Service</a></div>
+        <div class="item1"><a href="#about">About</a></div>
+        <div class="item1"><a href="#contact">Contact</a></div>
+        <button>Login</button>
+    </div>
+<div class="first">
+    <h1>KnightOne</h1>
+</div>
+</div><br><br>
+
+<div class="heads">
+<div class="heading">
+    <p>KnightOne-Create HTML & CSS Website Template</p>
+</div><br>
+<div class="basehead">
+    <p>We are team of designers making websites with Html and Css</p>
+</div><br><br><br>
+<div class="loading"></div>
+</div>
+
+<div class="whats-container">
+    <img src="whatsapp.jpg" alt="">
+</div><br><br><br><br><br><br><br><br><br>
+<div class="ins-container">
+    <img src="insta.png" alt="">
+</div>
+
+<div class="middle">
+    <section id="about">
+    <div class="second">
+        <h2>About Us:-</h2>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Creating a website using HTML and CSS is a foundational skill if you are learning web development. HTML (HyperText Markup Language) is used to structure content, while CSS (Cascading Style Sheets) is used for styling, including colors, fonts, margins, and positioning. In this article, we’ll go through the steps to create a simple, 
+        responsive webpage.   
+    </section><br><br>
+    <section id="box1">
+        <li>User friendly</li>
+        <li>Create Design</li>
+        <li>Web Development</li>
+        <li>Time reduce</li>
+        <li>Easy to lean</li>
+    </section>
+</div><br><br>
+
+<div class="main">
+    <section id="service">
+        <div class="third">
+        <h2>Services:-</h2>
+    </div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices.
+        Learn how to use HTML and CSS to make webpages. HTML is the markup language that you surround content with, to tell browsers about headings, lists, tables.     
+
+        <form>
+        <div class="rating">
+            <h4>Rating:-</h4>
+        </div>
+        <div class="star">
+            <label for=""></label>
+                <input type="radio" name="star" id="stars" >⭐&nbsp;&nbsp;
+                <input type="radio" name="star" id="stars" >⭐⭐&nbsp;&nbsp;
+                <input type="radio" name="star" id="stars" >⭐⭐⭐&nbsp;&nbsp;
+                <input type="radio" name="star" id="stars" >⭐⭐⭐⭐&nbsp;&nbsp;
+                <input type="radio" name="star" id="stars" >⭐⭐⭐⭐⭐<br><br>
+        </div>
+        </form>
+    </section><br><br>
+    </div>
+
+    <div class="img-container">
+        <div class="img-box">
+        </div>
+    </div>
+
+    <section id="box2">Sample-I
+        <span>Sample-II</span>
+    </section>
+</div>
+    <div class="cont">
+        <div class="con-head">
+            <h1>Contact:-</h1>
+        </div>
+        <section id="contact">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Contact No:-9867352019 <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Email:-aanushuya@gmail.com
+        </section>
+    </div>
+</body>
+</html>

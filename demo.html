@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Search</title>
+  <style>
+    body, html {
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        padding-bottom: 200px;
+    }
+    #image-container {
+        min-width: 100%;
+        min-height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #box-container {
+        height: auto;
+        width: 50%;
+        margin-left: 25%;
+        margin-top: 9%;
+        border-radius: 50px;
+        box-shadow: 10px 10px 100px black;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 40px;
+    }
+    #search-container {
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #text-container {
+        display: flex;
+        border-radius: 50px;
+        padding: 20px;
+        max-width: 1700px;
+    }
+    #input {
+        height: 50px;
+        width: 400px;
+        border-radius: 50px;
+        font-size: 20px;
+        padding-left: 30px;
+    }
+    button {
+        height: 60px;
+        width: 80px;
+        border: 2px solid black;
+        border-radius: 50%;
+        margin-left: 15px;
+        cursor: pointer;
+        background-color: white;
+    }
+    #search-bar {
+        height: 40px;
+    }
+    #weather-display {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+    }
+    #weather-img {
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <img src="sunset.jpg" alt="" id="image-container" />
+  <div id="box-container">
+    <div id="search-container">
+      <div id="text-container">
+        <input type="text" id="input" placeholder="Enter city name...">&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="button">
+          <img src="sear.png" alt="search" id="search-bar">
+        </button>
+      </div>
+    </div>
+    <div id="weather-display">Type a city and search to see weather!</div>
+    <img src="" alt="Weather Icon" id="weather-img" style="display: none;">
+  </div>
+
+  <script>
+    document.getElementById("button").addEventListener("click", async function () {
+      const city = document.getElementById("input").value;
+      const apiKey = "e3525fb4fb225e3fe0e8f372e57d4591"; 
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (response.ok) {
+          const weatherText = `
+            📍 Location: ${data.name}, ${data.sys.country} <br>
+            🌡️ Temp: ${data.main.temp}°C <br>
+            ☁️ Condition: ${data.weather[0].description}
+          `;
+          document.getElementById("weather-display").innerHTML = weatherText;
+          const iconCode = data.weather[0].icon;
+          const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+          const img = document.getElementById("weather-img");
+          img.src = iconUrl;
+          img.style.display = "block";
+        } else {
+          document.getElementById("weather-display").innerHTML = "❌ City not found.";
+          document.getElementById("weather-img").style.display = "none";
+        }
+      } catch (error) {
+        document.getElementById("weather-display").innerHTML = "⚠️ Error fetching weather.";
+        document.getElementById("weather-img").style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
